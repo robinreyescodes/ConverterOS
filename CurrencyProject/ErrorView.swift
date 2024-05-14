@@ -1,6 +1,6 @@
 //
 //  ErrorView.swift
-//  CurrencyProject
+//  
 //
 //  Created by Robin Reyes on 4/30/24.
 //

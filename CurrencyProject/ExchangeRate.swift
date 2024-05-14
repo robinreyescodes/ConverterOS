@@ -1,6 +1,6 @@
 //
 //  ExchangeRate.swift
-//  CurrencyProject
+//  
 //
 //  Created by Robin Reyes on 4/25/24
 //
