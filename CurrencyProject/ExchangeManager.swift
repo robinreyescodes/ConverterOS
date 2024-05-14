@@ -13,7 +13,7 @@ import Foundation
 class ExchangeManager {
     public var delegate: ExchangeRateDelegate? = nil
     // not best practice to have the api and the key here
-    // using it here to just showcase the connection between the app the api
+    // using it here to just showcase the connection between the app and the api
     let url = "https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_2jbNxceKoGwxfvOz0i5cfnxlY6ISdTD58yXq5cMr"
 
 

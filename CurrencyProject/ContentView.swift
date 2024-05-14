@@ -47,36 +47,39 @@ struct ContentView: View {
                 .resizable().frame(width:100, height:100)
             
             VStack(alignment:.center){
-                Text("Enter Cash Amount (Whole)").font(.title3).padding()
+                Text("Enter Cash Amount").font(.title3).padding()
                 TextField("", text: $amount)
                     .font(.system(size:22))
+                    .fontWeight(.bold)
                     .padding(10)
                     .frame(width:350, height:50)
-                    .background(.gray.opacity(0.2))
+                    .border(.green)
                     .cornerRadius(12)
                     .multilineTextAlignment(.center)
                     
+                    
             }
-            
             HStack {
-                Text("From Currency: ")
-                Spacer()
-                Picker("From Currency: ", selection: $fromCurrency) {
-                    ForEach(currencies, id: \.code) { currency in
-                        Text(currency.code).tag(currency)
-                    }
+                VStack {
+                    Text("From: ")
+                    
+                    Picker("From Currency: ", selection: $fromCurrency) {
+                        ForEach(currencies, id: \.code) { currency in
+                            Text(currency.code).tag(currency)
+                        }
+                    }.accentColor(.green)
+                }
+                
+                VStack {
+                    Text("To:  ")
+                    Picker("To Currency: ", selection: $toCurrency) {
+                        ForEach(currencies, id: \.code) { currency in
+                            Text(currency.code).tag(currency)
+                        }
+                    }.accentColor(.green)
                 }
             }
-            
-            HStack {
-                Text("To Currency: ")
-                Spacer()
-                Picker("To Currency: ", selection: $toCurrency) {
-                    ForEach(currencies, id: \.code) { currency in
-                        Text(currency.code).tag(currency)
-                    }
-                }
-            }
+
             
             Button(action: {
                 // do conversion here
@@ -88,8 +91,11 @@ struct ContentView: View {
                     .background(.green)
                     .cornerRadius(12)
             })
-            
-            Text("Your converted Amount").font(.title2).fontWeight(.medium)
+            VStack {
+                Text("\(amount)").font(.title2).fontWeight(.medium)
+                Text("\(fromCurrency.code) to \(toCurrency.code)").font(.title3)
+            }
+ 
             
             HStack {
                 if isLoading {
