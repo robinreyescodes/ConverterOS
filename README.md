@@ -7,7 +7,7 @@ In the beginning of April, my parents went on a trip to the Philippines to look 
 
 ## The how to get started
 1) Start my cloning the repo onto a local directory
-2) Open the project in xcode and let it build the project
+2) Double click the CurrencyProject.xcodeproj file to open project in xcode
 3) Run the build with simulator
 4) Start playing with the app!
 
