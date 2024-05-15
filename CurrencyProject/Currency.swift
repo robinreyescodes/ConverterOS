@@ -11,21 +11,24 @@ import Foundation
 struct Currency: Hashable {
     let code: String
     let symbol: String
-    
+    let flag: String
 }
 
 // storing a bunch of the currencies into a class so they can be accessible
 // may add more in future
 class CurrencyState {
     static let currencies: [Currency] = [
-        Currency(code: "USD", symbol: "$"),
-        Currency(code: "EUR", symbol: "€"),
-        Currency(code: "GBP", symbol: "£"),
-        Currency(code: "CAD", symbol: "$"),
-        Currency(code: "PHP", symbol: "₱"),
-        Currency(code: "KRW", symbol: "₩"),
-        Currency(code: "AUD", symbol: "$"),
-        Currency(code: "JPY", symbol: "¥"),
+        Currency(code: "USD", symbol: "$", flag: "🇺🇸"),
+        Currency(code: "EUR", symbol: "€", flag: "🇪🇺"),
+        Currency(code: "GBP", symbol: "£", flag: "🇬🇧"),
+        Currency(code: "CAD", symbol: "$", flag: "🇨🇦"),
+        Currency(code: "MXN", symbol: "$", flag: "🇲🇽"),
+        Currency(code: "PHP", symbol: "₱", flag: "🇵🇭"),
+        Currency(code: "KRW", symbol: "₩", flag: "🇰🇷"),
+        Currency(code: "AUD", symbol: "$", flag: "🇦🇺"),
+        Currency(code: "JPY", symbol: "¥", flag: "🇯🇵"),
+        Currency(code: "CNY", symbol: "¥", flag: "🇨🇳"),
+        Currency(code: "TRY", symbol: "₺", flag: "🇹🇷"),
         
         
     ]

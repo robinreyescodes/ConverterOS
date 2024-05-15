@@ -65,7 +65,7 @@ struct ContentView: View {
                     
                     Picker("From Currency: ", selection: $fromCurrency) {
                         ForEach(currencies, id: \.code) { currency in
-                            Text(currency.code).tag(currency)
+                            Text("\(currency.code) \(currency.flag)").tag(currency)
                         }
                     }.accentColor(.green)
                 }
@@ -74,7 +74,7 @@ struct ContentView: View {
                     Text("To:  ")
                     Picker("To Currency: ", selection: $toCurrency) {
                         ForEach(currencies, id: \.code) { currency in
-                            Text(currency.code).tag(currency)
+                            Text("\(currency.code) \(currency.flag)").tag(currency)
                         }
                     }.accentColor(.green)
                 }
@@ -86,14 +86,14 @@ struct ContentView: View {
                 convertCurrency()
             }, label: {
                 Text("Convert!")
-                    .frame(width:150, height: 50)
+                    .frame(width:120, height: 40)
                     .foregroundColor(.white)
                     .background(.green)
                     .cornerRadius(12)
             })
             VStack {
                 Text("\(amount)").font(.title2).fontWeight(.medium)
-                Text("\(fromCurrency.code) to \(toCurrency.code)").font(.title3)
+                Text("\(fromCurrency.code) \(fromCurrency.flag) to \(toCurrency.code) \(toCurrency.flag)").font(.title3)
             }
  
             
