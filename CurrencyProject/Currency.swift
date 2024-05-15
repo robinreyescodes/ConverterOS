@@ -1,6 +1,6 @@
-//
 //  Currency.swift
 //
+//  struct and class for the currencies we give the users to select from 
 //
 //  Created by Robin Reyes on 4/25/24
 

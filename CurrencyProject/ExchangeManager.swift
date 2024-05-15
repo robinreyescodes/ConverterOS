@@ -1,6 +1,7 @@
-//
 //  ExchangeManager.swift
-//  
+//
+//  Handles API functionality, fetching data and decoding JSON
+//  Handles any error messages if any were to occur
 //
 //  Created by Robin Reyes on 4/25/24
 //
@@ -17,7 +18,8 @@ class ExchangeManager {
     let url = "https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_2jbNxceKoGwxfvOz0i5cfnxlY6ISdTD58yXq5cMr"
 
 
-    
+    // function to fetch the rates from the API, using users selected values as parameters
+    // main function where async functions occur
     func fetchRates(for currency: String, toCurrency: String, ifCompleted: @escaping (_ exchangeRate: ExchangeRate?) -> Void) {
         
         self.delegate?.reset() // makes sure the response is not in an error state
@@ -26,6 +28,7 @@ class ExchangeManager {
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             // if error, connection to api led to error
+            // send client error
             if let err = error {
                 self.handleClientError(err)
                 DispatchQueue.main.async {
@@ -35,6 +38,7 @@ class ExchangeManager {
                 return
             }
             
+            // server error message gets returned if statusCode is not 200
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                 self.handleServerError(response)
                 DispatchQueue.main.async {

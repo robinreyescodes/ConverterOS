@@ -99,7 +99,7 @@ struct ContentView: View {
             
             HStack {
                 if isLoading {
-                    // data is loading
+                    // data is loading, show animation
                     ProgressView()
                 } else {
                     Text(getConvertedAmountString()).font(.title).foregroundColor(.white).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)

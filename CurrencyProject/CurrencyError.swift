@@ -1,6 +1,6 @@
-//
 //  CurrencyError.swift
-//  
+//
+//  View if user's currency input is not correct
 //
 //  Created by Robin Reyes on 4/30/24
 //

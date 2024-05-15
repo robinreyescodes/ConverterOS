@@ -1,6 +1,6 @@
-//
 //  ErrorView.swift
-//  
+//
+//  View if any errors reaching server occur
 //
 //  Created by Robin Reyes on 4/30/24.
 //
